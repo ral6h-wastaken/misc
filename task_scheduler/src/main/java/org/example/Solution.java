@@ -29,7 +29,6 @@ public class Solution {
                 if (i < orderedTasks.size() && orderedTasks.get(i).getValue() > 0) {
                     resStringBuilder.append(orderedTasks.get(i).getKey());
                     orderedTasks.get(i).setValue(orderedTasks.get(i).getValue() - 1);
-                    orderedTasks.set(i, orderedTasks.get(i));
                     totalTasksLeft = orderedTasks.stream().map(Map.Entry::getValue).reduce(0, Integer::sum);
                     check = (totalTasksLeft > 0);
                 } else {
